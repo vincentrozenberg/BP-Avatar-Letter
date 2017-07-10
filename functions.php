@@ -1,5 +1,7 @@
 <?php
 
+add_filter('bp_core_fetch_avatar_no_grav', '__return_true'); //removes the standard "mystery man" gravatar 
+
 function set_avatar_based_on_first_letter( $avatar, $params ) {
   $user_id = $params['item_id'];
   $name_field = 1; //profile field id
