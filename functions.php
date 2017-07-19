@@ -2,7 +2,7 @@
 
 add_filter('bp_core_fetch_avatar_no_grav', '__return_true'); //removes the standard "mystery man" gravatar 
 
-function set_avatar_based_on_first_letter( $avatar, $params ) {
+function vr_set_avatar_based_on_first_letter( $avatar, $params ) {
   $user_id = $params['item_id'];
   $name_field = 1; //profile field id
 
@@ -14,4 +14,4 @@ function set_avatar_based_on_first_letter( $avatar, $params ) {
 
     return $avatar;
 }
-add_filter( 'bp_core_default_avatar_user', 'set_avatar_based_on_first_letter', 10, 2 );
+add_filter( 'bp_core_default_avatar_user', 'vr_set_avatar_based_on_first_letter', 10, 2 );
