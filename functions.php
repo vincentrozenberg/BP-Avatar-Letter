@@ -10,7 +10,13 @@ function vr_set_avatar_based_on_first_letter( $avatar, $params ) {
     $name = substr($name, 0, 1); //get the first letter
     $name = strtolower( $name ); //make lowercase
 
-        $avatar = get_bloginfo('template_url') . '/images/avatar/'.$name.'.png'; //a.png, b.png, etc.
+    	if ($name == "") {
+      	$avatar = get_bloginfo('template_url') . '/images/avatar/'.$name.'a.png'; // set to a.png if no name can be found
+        }
+        else {
+        	$avatar = get_bloginfo('template_url') . '/images/avatar/'.$name.'.png'; //a.png, b.png, etc.
+
+        }
 
     return $avatar;
 }
